@@ -116,7 +116,8 @@ class ViewController: UIViewController {
 		appearance.animationduration = 0.25
 		appearance.textColor = .darkGray
 //		appearance.textFont = UIFont(name: "Georgia", size: 14)
-        appearance.borderWidth = 10
+        appearance.borderWidth = 1
+        appearance.borderColor = UIColor(white: 0.6, alpha: 1)
 		
 		dropDowns.forEach {
 			/*** FOR CUSTOM CELLS ***/

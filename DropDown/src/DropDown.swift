@@ -275,6 +275,19 @@ public final class DropDown: UIView {
         }
         didSet { reloadAllComponents() }
     }
+    
+    /**
+     The border width of DropDown.
+     
+     Changing the border width automatically reloads the drop down.
+     */
+    @objc public dynamic var borderColor = DPDConstant.UI.BorderColor {
+        willSet {
+            tableViewContainer.layer.borderColor = newValue.cgColor
+            tableView.layer.borderColor = newValue.cgColor
+        }
+        didSet { reloadAllComponents() }
+    }
 
 	/**
 	The duration of the show/hide animation.
@@ -512,6 +525,7 @@ private extension DropDown {
 		tableViewContainer.layer.shadowOpacity = shadowOpacity
 		tableViewContainer.layer.shadowRadius = shadowRadius
         tableViewContainer.layer.borderWidth = borderWidth
+        tableViewContainer.layer.borderColor = borderColor.cgColor
 
 		tableView.backgroundColor = tableViewBackgroundColor
 		tableView.separatorColor = separatorColor
